@@ -13,6 +13,7 @@ const Card = ({ data }) => {
     <View
       style={{
         backgroundColor: COLORS.white,
+        borderColor: COLORS.gray,
         borderRadius: SIZES.font,
         marginBottom: SIZES.extraLarge,
         margin: SIZES.base,
@@ -22,29 +23,20 @@ const Card = ({ data }) => {
       <View
         style={{
           width: "100%",
-          height: 250,
+          height: 60,
         }}
       >
-        <Image
-          source={data.image}
-          resizeMode="cover"
-          style={{
-            width: "100%",
-            height: "100%",
-            borderTopLeftRadius: SIZES.font,
-            borderTopRightRadius: SIZES.font,
-          }}
-        />
+        
 
         <CircleButton imgUrl={assets.heart} right={10} top={10} />
       </View>
 
-      <SubInfo />
+      {/* <SubInfo /> */}
 
       <View style={{ width: "100%", padding: SIZES.font }}>
         <NFTTitle
           title={data.name}
-          subTitle={data.creator}
+          
           titleSize={SIZES.large}
           subTitleSize={SIZES.small}
         />
