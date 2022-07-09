@@ -2,7 +2,7 @@ import HomeHeader from "./HomeHeader";
 import Card from "./Card";
 import { RectButton, CircleButton } from "./Button";
 import { SubInfo, People, EndDate, EthPrice, NFTTitle } from "./SubInfo";
-import DetailsBid from "./DetailsBid";
+import DetailsInfo from "./DetailsInfo";
 import FocusedStatusBar from "./FocusedStatusBar";
 import DetailsDesc from './DetailsDesc';
 
@@ -16,7 +16,7 @@ export {
   CircleButton,
   EthPrice,
   NFTTitle,
-  DetailsBid,
+  DetailsInfo as DetailsBid,
   FocusedStatusBar,
   DetailsDesc,
 };

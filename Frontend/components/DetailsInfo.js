@@ -3,7 +3,7 @@ import { View, Text, Image } from "react-native";
 
 import { COLORS, SIZES, FONTS } from "../constants";
 
-const DetailsBid = ({ bid }) => {
+const DetailsInfo = ({ time }) => {
   return (
     <View
       style={{
@@ -14,7 +14,7 @@ const DetailsBid = ({ bid }) => {
         marginVertical: SIZES.base,
         paddingHorizontal: SIZES.base,
       }}
-      key={bid.id}
+      key={time.id}
     >
       <View
         style={{
@@ -47,4 +47,4 @@ const DetailsBid = ({ bid }) => {
   );
 };
 
-export default DetailsBid;
+export default DetailsInfo;

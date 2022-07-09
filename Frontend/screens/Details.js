@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react";
 import { View, Text, SafeAreaView, Image, StatusBar, FlatList } from "react-native";
 
 import { COLORS, SIZES, assets, SHADOWS, FONTS } from "../constants";
-import { CircleButton, RectButton, SubInfo, DetailsDesc, DetailsBid, FocusedStatusBar } from "../components";
+import { CircleButton, FocusedStatusBar } from "../components";
 import Avatar from "../components/Avatar";
 
 import ImageViewer from 'react-native-image-zoom-viewer';
@@ -46,6 +46,42 @@ TODO: resize cross icon */}
     />
   </View>
 )};
+
+const DetailsInfo = ({ data }) => {
+  const time=data.time
+  return (
+  <View style={{ width: "100%", height: 500 }}>
+      <View
+        style={{
+          flex: 1,
+          alignItems: "center",
+          paddingHorizontal: SIZES.base,
+        }}
+      >
+        <Text
+          style={{
+            fontFamily: FONTS.semiBold,
+            fontSize: SIZES.small,
+            color: COLORS.primary,
+          }}
+        >
+          Document uploaded on
+        </Text>
+        <Text
+          style={{
+            fontFamily: FONTS.regular,
+            fontSize: SIZES.small - 2,
+            color: COLORS.secondary,
+            marginTop: 3,
+          }}
+        >
+          {time}
+        </Text>
+      </View>
+    </View>
+  );
+};
+
 
 const Details = ({ route, navigation }) => {
   const { data, session } = route.params;
@@ -123,7 +159,7 @@ const Details = ({ route, navigation }) => {
         translucent={true}
       />
 
-      <View
+      {/* <View
         style={{
           width: "100%",
           position: "absolute",
@@ -135,12 +171,19 @@ const Details = ({ route, navigation }) => {
           zIndex: 1,
         }}
       >
-        {/* <RectButton minWidth={170} fontSize={SIZES.large} {...SHADOWS.dark} /> */}
-      </View>
 
-      <FlatList
-        data={data.bids}
-        renderItem={({ item }) => <DetailsBid bid={item} />}
+        <RectButton minWidth={170} fontSize={SIZES.large} {...SHADOWS.dark} />
+      </View> */}
+
+      <DetailsHeader data={data} navigation={navigation} />
+      {/* console.log({"test"}); */}
+      {/* console.log({data.time}) */}
+      <DetailsInfo data={data} />
+
+      {/* <FlatList
+        // data={data.bids}
+        data={data}
+        renderItem={({ item }) => <DetailsBid time={item} />}
         keyExtractor={(item) => item.id}
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{
@@ -151,7 +194,8 @@ const Details = ({ route, navigation }) => {
             <DetailsHeader data={data} navigation={navigation} />
           </React.Fragment>
         )}
-      />
+      /> */}
+
       {/* <Avatar
         url={avatar_url}
         size={150}
@@ -160,6 +204,7 @@ const Details = ({ route, navigation }) => {
           updateProfile({ username, website, avatar_url: url });
         }}
       /> */}
+
     </SafeAreaView>
   );
 };
