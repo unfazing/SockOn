@@ -17,11 +17,11 @@ const DetailsBid = ({ bid }) => {
       }}
       key={bid.id}
     >
-      <Image
+      {/* <Image
         source={bid.image}
         resizeMode="contain"
         style={{ width: 48, height: 48 }}
-      />
+      /> */}
 
       <View
         style={{
@@ -37,7 +37,7 @@ const DetailsBid = ({ bid }) => {
             color: COLORS.primary,
           }}
         >
-          Bid placed by {bid.name}
+          Document uploaded on
         </Text>
         <Text
           style={{
@@ -50,8 +50,6 @@ const DetailsBid = ({ bid }) => {
           {bid.date}
         </Text>
       </View>
-
-      <EthPrice price={bid.price} />
     </View>
   );
 };
