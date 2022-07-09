@@ -3,7 +3,7 @@ import { useNavigation } from "@react-navigation/native";
 import { View, Image, TouchableOpacity } from "react-native";
 
 import { COLORS, SIZES, SHADOWS, assets } from "../constants";
-import { SubInfo, EthPrice, NFTTitle } from "./SubInfo";
+import { SubInfo, Description, NFTTitle } from "./SubInfo";
 import { RectButton, CircleButton } from "./Button";
 
 const Card = ({ data }) => {
@@ -27,7 +27,11 @@ const Card = ({ data }) => {
         }}
       >
       
-        <CircleButton imgUrl={assets.checkmark} right={20} top={30} backgroundColor={'#f68686'}/>
+        <CircleButton 
+          imgUrl={data.is_ticked ? assets.checkmark : assets.add} 
+          right={20} top={30} 
+          backgroundColor={data.is_ticked ? '#f68686' : COLORS.white}
+        />
       </View>
 
       {/* <SubInfo /> */}
@@ -48,7 +52,7 @@ const Card = ({ data }) => {
             alignItems: "center",
           }}
         >
-          <EthPrice price={data.description} />
+          <Description description={data.description} />
           
         </View>
       </View>

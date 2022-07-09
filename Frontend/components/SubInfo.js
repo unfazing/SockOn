@@ -19,7 +19,7 @@ export const NFTTitle = ({ title, titleSize, subTitleSize }) => {
   );
 };
 
-export const EthPrice = ({ price }) => {
+export const Description = ({ description }) => {
   return (
     <View style={{ flexDirection: "row", alignItems: "center" }}>
       {/* <Image
@@ -35,7 +35,7 @@ export const EthPrice = ({ price }) => {
           marginLeft: 2
         }}
       >
-        {price}
+        {description}
       </Text>
     </View>
   );
