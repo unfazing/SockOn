@@ -48,7 +48,7 @@ const Card = ({ data }) => {
             alignItems: "center",
           }}
         >
-          <EthPrice price={data.price} />
+          <EthPrice price={data.description} />
           
         </View>
       </View>

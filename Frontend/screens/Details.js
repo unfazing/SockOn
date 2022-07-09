@@ -9,14 +9,17 @@ import ImageViewer from 'react-native-image-zoom-viewer';
 
 const DetailsHeader = ({ data, navigation }) => {
   // TODO: check if multiple images exist
+  // const images = [{
+  //   url: '',
+  //   props: {
+  //     source: data.image
+  //   }
+  // }]
   const images = [{
-    url: '',
-    props: {
-      source: data.image
-    }
+    url: data.image_url,
   }]
   return (
-  <View style={{ width: "100%", height: 600 }}>
+  <View style={{ width: "100%", height: 500 }}>
     {/* <Image
       source={data.image}
       resizeMode="cover"
@@ -146,32 +149,17 @@ const Details = ({ route, navigation }) => {
         ListHeaderComponent={() => (
           <React.Fragment>
             <DetailsHeader data={data} navigation={navigation} />
-            {/* <SubInfo /> */}
-            {/* <View style={{ padding: SIZES.font }}>
-
-              {data.bids.length > 0 && (
-                <Text
-                  style={{
-                    fontSize: SIZES.font,
-                    fontFamily: FONTS.semiBold,
-                    color: COLORS.primary,
-                  }}
-                >
-                  Current Bid
-                </Text>
-              )}
-            </View> */}
           </React.Fragment>
         )}
       />
-      <Avatar
+      {/* <Avatar
         url={avatar_url}
         size={150}
         onUpload={(url) => {
           setAvatarUrl(url);
           updateProfile({ username, website, avatar_url: url });
         }}
-      />
+      /> */}
     </SafeAreaView>
   );
 };

@@ -1,7 +1,6 @@
 import React from "react";
 import { View, Text, Image } from "react-native";
 
-import { EthPrice } from "./SubInfo";
 import { COLORS, SIZES, FONTS } from "../constants";
 
 const DetailsBid = ({ bid }) => {
@@ -17,12 +16,6 @@ const DetailsBid = ({ bid }) => {
       }}
       key={bid.id}
     >
-      {/* <Image
-        source={bid.image}
-        resizeMode="contain"
-        style={{ width: 48, height: 48 }}
-      /> */}
-
       <View
         style={{
           flex: 1,
@@ -47,7 +40,7 @@ const DetailsBid = ({ bid }) => {
             marginTop: 3,
           }}
         >
-          {bid.date}
+          {time}
         </Text>
       </View>
     </View>
