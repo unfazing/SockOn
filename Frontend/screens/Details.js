@@ -9,22 +9,11 @@ import ImageViewer from 'react-native-image-zoom-viewer';
 
 const DetailsHeader = ({ data, navigation }) => {
   // TODO: check if multiple images exist
-  // const images = [{
-  //   url: '',
-  //   props: {
-  //     source: data.image
-  //   }
-  // }]
   const images = [{
     url: data.image_url,
   }]
   return (
   <View style={{ width: "100%", height: 500 }}>
-    {/* <Image
-      source={data.image}
-      resizeMode="cover"
-      style={{ width: "100%", height: "100%" }}
-    /> */}
     <ImageViewer
       imageUrls={images}
       renderIndicator={() => null}
@@ -50,7 +39,7 @@ TODO: resize cross icon */}
 const DetailsInfo = ({ data }) => {
   const time=data.time
   return (
-  <View style={{ width: "100%", height: 500 }}>
+  <View style={{ width: "100%", height: 40, marginTop:10}}>
       <View
         style={{
           flex: 1,
@@ -81,7 +70,6 @@ const DetailsInfo = ({ data }) => {
     </View>
   );
 };
-
 
 const Details = ({ route, navigation }) => {
   const { data, session } = route.params;
@@ -158,53 +146,16 @@ const Details = ({ route, navigation }) => {
         backgroundColor="transparent"
         translucent={true}
       />
-
-      {/* <View
-        style={{
-          width: "100%",
-          position: "absolute",
-          bottom: 0,
-          paddingVertical: SIZES.font,
-          justifyContent: "center",
-          alignItems: "center",
-          backgroundColor: "rgba(255,255,255,0.5)",
-          zIndex: 1,
-        }}
-      >
-
-        <RectButton minWidth={170} fontSize={SIZES.large} {...SHADOWS.dark} />
-      </View> */}
-
       <DetailsHeader data={data} navigation={navigation} />
-      {/* console.log({"test"}); */}
-      {/* console.log({data.time}) */}
       <DetailsInfo data={data} />
-
-      {/* <FlatList
-        // data={data.bids}
-        data={data}
-        renderItem={({ item }) => <DetailsBid time={item} />}
-        keyExtractor={(item) => item.id}
-        showsVerticalScrollIndicator={false}
-        contentContainerStyle={{
-          paddingBottom: SIZES.extraLarge * 3,
-        }}
-        ListHeaderComponent={() => (
-          <React.Fragment>
-            <DetailsHeader data={data} navigation={navigation} />
-          </React.Fragment>
-        )}
-      /> */}
-
-      {/* <Avatar
+      <Avatar
         url={avatar_url}
         size={150}
         onUpload={(url) => {
           setAvatarUrl(url);
           updateProfile({ username, website, avatar_url: url });
         }}
-      /> */}
-
+      />
     </SafeAreaView>
   );
 };

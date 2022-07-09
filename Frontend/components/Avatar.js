@@ -119,7 +119,7 @@ const Avatar = ({ url }) => {
 
     return (
         <View style={styles.container}>
-            {hasUrl ? (
+            {/* {hasUrl ? (
                 <Image
                     style={styles.image}
                     source={image}
@@ -129,7 +129,7 @@ const Avatar = ({ url }) => {
                     style={styles.image}
                     source={{ uri: image }}
                 />
-            )}
+            )} */}
             <TouchableOpacity
                 style={styles.Button}
                 onPress={() => pickImage()}>
@@ -157,7 +157,7 @@ const styles = StyleSheet.create({
         alignItems: "center",
         justifyContent: "center",
         marginTop: 10,
-        backgroundColor: "#ffff00",
+        backgroundColor: "#F68686",
     },
 });
 
