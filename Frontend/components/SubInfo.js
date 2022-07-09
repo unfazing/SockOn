@@ -3,7 +3,7 @@ import { View, Image, Text } from "react-native";
 
 import { SIZES, FONTS, COLORS, SHADOWS, assets } from "../constants";
 
-export const NFTTitle = ({ title, titleSize, subTitleSize }) => {
+export const Title = ({ title, titleSize }) => {
   return (
     <View>
       <Text

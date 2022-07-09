@@ -6,8 +6,6 @@ import { COLORS, NFTData as Data } from "../constants";
 import { supabase } from "../lib/supabase";
 
 const Home = () => {
-  // const test = await getData()
-  // console.log(test)
   const [Data, setData] = useState(null);
   const [copy_data, setCopyData] = useState(null);
   const [state, setState] = useState({});
@@ -30,7 +28,6 @@ const Home = () => {
         if (error) {
             throw error
         }
-        console.log(data)
         setData(data)
         setCopyData(data)
         return data

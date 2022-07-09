@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react";
 import { View, Text, SafeAreaView, Image, StatusBar, FlatList } from "react-native";
 import { format, parse } from "date-fns";
 
-import { COLORS, SIZES, assets, SHADOWS, FONTS } from "../constants";
+import { COLORS, SIZES, assets, FONTS } from "../constants";
 import { CircleButton, FocusedStatusBar } from "../components";
 import Avatar from "../components/Avatar";
 

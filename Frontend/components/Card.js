@@ -3,7 +3,7 @@ import { useNavigation } from "@react-navigation/native";
 import { View, Image, TouchableOpacity } from "react-native";
 
 import { COLORS, SIZES, SHADOWS, assets } from "../constants";
-import { SubInfo, Description, NFTTitle } from "./SubInfo";
+import { SubInfo, Description, Title } from "./SubInfo";
 import { RectButton, CircleButton } from "./Button";
 
 const Card = ({ data }) => {
@@ -37,7 +37,7 @@ const Card = ({ data }) => {
       {/* <SubInfo /> */}
 
       <View style={{ width: "100%", padding: SIZES.font }}>
-        <NFTTitle
+        <Title
           title={data.name}
           
           titleSize={SIZES.extraLarge}
