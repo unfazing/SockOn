@@ -11,16 +11,17 @@ const DetailsHeader = ({ data, navigation }) => (
       resizeMode="cover"
       style={{ width: "100%", height: "100%" }}
     />
-
+{/* go back */}
     <CircleButton
       imgUrl={assets.left}
       handlePress={() => navigation.goBack()}
       left={15}
       top={StatusBar.currentHeight + 10}
     />
-
+{/* delete button 
+TODO: resize cross icon */}
     <CircleButton
-      imgUrl={assets.heart}
+      imgUrl={assets.close} 
       right={15}
       top={StatusBar.currentHeight + 10}
     />
@@ -50,7 +51,7 @@ const Details = ({ route, navigation }) => {
           zIndex: 1,
         }}
       >
-        <RectButton minWidth={170} fontSize={SIZES.large} {...SHADOWS.dark} />
+        {/* <RectButton minWidth={170} fontSize={SIZES.large} {...SHADOWS.dark} /> */}
       </View>
 
       <FlatList
@@ -64,9 +65,8 @@ const Details = ({ route, navigation }) => {
         ListHeaderComponent={() => (
           <React.Fragment>
             <DetailsHeader data={data} navigation={navigation} />
-            <SubInfo />
-            <View style={{ padding: SIZES.font }}>
-              <DetailsDesc data={data} />
+            {/* <SubInfo /> */}
+            {/* <View style={{ padding: SIZES.font }}>
 
               {data.bids.length > 0 && (
                 <Text
@@ -79,7 +79,7 @@ const Details = ({ route, navigation }) => {
                   Current Bid
                 </Text>
               )}
-            </View>
+            </View> */}
           </React.Fragment>
         )}
       />
