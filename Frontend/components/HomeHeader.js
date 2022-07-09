@@ -17,7 +17,7 @@ const HomeHeader = ({ onSearch }) => {
           padding: SIZES.font,
         }}
       >
-        <View
+        {/* <View
           style={{
             flexDirection: "row",
             justifyContent: "center",
@@ -25,15 +25,15 @@ const HomeHeader = ({ onSearch }) => {
           }}
         >
           
-        </View>
-        <View
+        </View> */}
+        {/* <View
           style={{
             flexDirection: "row",
             justifyContent: "space-between",
             alignItems: "center",
           }}
-        >
-          <Image
+        > */}
+          {/* <Image
             source={assets.logo}
             resizeMode="contain"
             style={{ width: 100, height: 45 }}
@@ -44,7 +44,7 @@ const HomeHeader = ({ onSearch }) => {
               source={assets.person01}
               resizeMode="contain"
               style={{ width: "100%", height: "100%" }}
-            />
+            /> 
             <Image
               source={assets.badge}
               resizeMode="contain"
@@ -56,8 +56,8 @@ const HomeHeader = ({ onSearch }) => {
                 right: 0,
               }}
             />
-          </View>
-        </View>
+          </View> */}
+        {/* </View> */}
 
         <View style={{ marginVertical: SIZES.font }}>
           <Text
