@@ -23,12 +23,11 @@ const Card = ({ data }) => {
       <View
         style={{
           width: "100%",
-          height: 30,
+          height: 15,
         }}
       >
-        
-
-        <CircleButton imgUrl={assets.heart} right={10} top={20} />
+      
+        <CircleButton imgUrl={assets.checkmark} right={20} top={30} backgroundColor={'#f68686'}/>
       </View>
 
       {/* <SubInfo /> */}
@@ -37,7 +36,7 @@ const Card = ({ data }) => {
         <NFTTitle
           title={data.name}
           
-          titleSize={SIZES.large}
+          titleSize={SIZES.extraLarge}
           subTitleSize={SIZES.small}
         />
 

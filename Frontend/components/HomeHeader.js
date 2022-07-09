@@ -47,24 +47,25 @@ const HomeHeader = ({ onSearch }) => {
       <View style={{ marginVertical: SIZES.font }}>
         <Text
           style={{
-            fontFamily: FONTS.regular,
-            fontSize: SIZES.small,
-            color: COLORS.white,
-          }}
-        >
-          Hello Victoria 👋
-        </Text>
-
-        <Text
-          style={{
             fontFamily: FONTS.bold,
-            fontSize: SIZES.large,
+            fontSize: SIZES.extraLarge,
             color: COLORS.white,
             marginTop: SIZES.base / 2,
           }}
         >
-          Let’s find masterpiece Art
+          HANOI, VIETNAM
         </Text>
+        
+        <Text
+          style={{
+            fontFamily: FONTS.regular,
+            fontSize: SIZES.medium,
+            color: COLORS.white,
+          }}
+        >
+          4/3 - 9/3
+        </Text>
+
       </View>
 
       <View style={{ marginTop: SIZES.font }}>
@@ -85,7 +86,7 @@ const HomeHeader = ({ onSearch }) => {
             style={{ width: 20, height: 20, marginRight: SIZES.base }}
           />
           <TextInput
-            placeholder="Search NFTs"
+            placeholder="Search Documents"
             style={{ flex: 1 }}
             onChangeText={onSearch}
           />

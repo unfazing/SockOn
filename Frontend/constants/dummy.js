@@ -5,7 +5,7 @@ const NFTData = [
     id: "NFT-01",
     name: "Itinerary",
     creator: "Putri Intan",
-    price: 4.25,
+    price: "Your Travel Plans",
     description:
       "The action painter abstract expressionists were directly influenced by automatism. Pollock channelled this into producing gestural. The action painter abstract expressionists were directly influenced by automatism. Pollock channelled this into producing gestural. The action painter abstract expressionists were directly influenced by automatism. Pollock channelled this into producing gestural.",
     image: assets.nft01,
@@ -37,7 +37,7 @@ const NFTData = [
     id: "NFT-02",
     name: "Visa",
     creator: "Siti Nurhaliza",
-    price: 7.25,
+    price: "Important VISA Documents",
     description:
       "The action painter abstract expressionists were directly influenced by automatism. Pollock channelled this into producing gestural. Nulla sed velit erat vitae leo sem inceptos diam fames arcu hendrerit, quis ultrices in eleifend posuere ipsum conubia porttitor felis.",
     image: assets.nft02,
@@ -55,7 +55,7 @@ const NFTData = [
     id: "NFT-03",
     name: "Insurance",
     creator: "Elisabeth aho",
-    price: 95.25,
+    price: "Know Your Coverage",
     description:
       "The action painter abstract expressionists were directly influenced by automatism. Pollock channelled this into producing gestural. Lorem ipsum dolor sit amet consectetur adipiscing elit consequat accumsan sapien, lectus convallis malesuada odio curae habitasse dignissim nascetur. Nulla sed velit erat vitae leo sem inceptos diam fames arcu hendrerit, quis ultrices in eleifend posuere ipsum conubia porttitor felis. Lorem ipsum dolor sit amet consectetur adipiscing elit consequat accumsan sapien, lectus convallis malesuada odio curae habitasse dignissim nascetur. Nulla sed velit erat vitae leo sem inceptos diam fames arcu hendrerit, quis ultrices in eleifend posuere ipsum conubia porttitor felis.",
     image: assets.nft03,
@@ -80,7 +80,7 @@ const NFTData = [
     id: "NFT-04",
     name: "Flight Ticket",
     creator: "Putri Intan",
-    price: 54.25,
+    price: "Don't miss it!",
     description:
       "The action painter abstract expressionists were directly influenced by automatism. Pollock channelled this into producing gestural.Lorem ipsum dolor sit amet consectetur adipiscing elit consequat accumsan sapien, lectus convallis malesuada odio curae habitasse dignissim nascetur.",
     image: assets.nft04,
@@ -119,7 +119,7 @@ const NFTData = [
     id: "NFT-05",
     name: "Vaccination",
     creator: "David doe",
-    price: 10.25,
+    price: "PPP or PPM? 🤔",
     description:
       "The action painter abstract expressionists were directly influenced by automatism. Pollock channelled this into producing gestural.",
     image: assets.nft05,

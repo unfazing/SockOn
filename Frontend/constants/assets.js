@@ -4,6 +4,7 @@ import heart from "../assets/icons/heart.png";
 import left from "../assets/icons/left.png";
 import search from "../assets/icons/search.png";
 import close from "../assets/icons/close.png";
+import checkmark from '../assets/icons/check-mark.png'
 
 import logo from "../assets/images/logo.png";
 import nft01 from "../assets/images/nft01.png";
@@ -26,6 +27,7 @@ export default {
   left,
   search,
   close,
+  checkmark,
 
   logo,
   nft01,
