@@ -74,14 +74,26 @@ const Avatar = ({ url }) => {
                 .update({ avatar_url: filePath })
                 .match({ id: user.id })
 
+            const { signedURL, error3 } = supabase
+                .storage
+                .from('avatars')
+                .getPublicUrl(filePath)
+
+            const { error2 } = await supabase
+                .from('details')
+                .update({ image_url: signedURL })
+                .match({ user_id: user.id })
+
             if (uploadError) {
                 throw uploadError
             } else if (error) {
                 throw error
+            } else if (error2) {
+                throw error2
             } else {
                 setUrl(false)
             }
-        } catch (error) {
+        } catch (error) { 
             alert(error.message)
         } finally {
             setUploading(false)
@@ -119,7 +131,7 @@ const Avatar = ({ url }) => {
 
     return (
         <View style={styles.container}>
-            {/* {hasUrl ? (
+            {hasUrl ? (
                 <Image
                     style={styles.image}
                     source={image}
@@ -129,7 +141,7 @@ const Avatar = ({ url }) => {
                     style={styles.image}
                     source={{ uri: image }}
                 />
-            )} */}
+            )}
             <TouchableOpacity
                 style={styles.Button}
                 onPress={() => pickImage()}>
