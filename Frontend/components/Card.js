@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigation } from "@react-navigation/native";
-import { View, Image } from "react-native";
+import { View, Image, TouchableOpacity } from "react-native";
 
 import { COLORS, SIZES, SHADOWS, assets } from "../constants";
 import { SubInfo, EthPrice, NFTTitle } from "./SubInfo";
@@ -10,25 +10,25 @@ const Card = ({ data }) => {
   const navigation = useNavigation();
 
   return (
-    <View
+    <TouchableOpacity
       style={{
         backgroundColor: COLORS.white,
-        borderColor: COLORS.gray,
         borderRadius: SIZES.font,
         marginBottom: SIZES.extraLarge,
         margin: SIZES.base,
         ...SHADOWS.dark,
       }}
+      onPress = {() => navigation.navigate("Details", { data })}
     >
       <View
         style={{
           width: "100%",
-          height: 60,
+          height: 30,
         }}
       >
         
 
-        <CircleButton imgUrl={assets.heart} right={10} top={10} />
+        <CircleButton imgUrl={assets.heart} right={10} top={20} />
       </View>
 
       {/* <SubInfo /> */}
@@ -50,14 +50,10 @@ const Card = ({ data }) => {
           }}
         >
           <EthPrice price={data.price} />
-          <RectButton
-            minWidth={120}
-            fontSize={SIZES.font}
-            handlePress={() => navigation.navigate("Details", { data })}
-          />
+          
         </View>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 
