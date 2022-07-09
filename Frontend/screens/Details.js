@@ -4,13 +4,28 @@ import { View, Text, SafeAreaView, Image, StatusBar, FlatList } from "react-nati
 import { COLORS, SIZES, assets, SHADOWS, FONTS } from "../constants";
 import { CircleButton, RectButton, SubInfo, DetailsDesc, DetailsBid, FocusedStatusBar } from "../components";
 
-const DetailsHeader = ({ data, navigation }) => (
-  <View style={{ width: "100%", height: 373 }}>
-    <Image
+import ImageViewer from 'react-native-image-zoom-viewer';
+
+const DetailsHeader = ({ data, navigation }) => {
+  // TODO: check if multiple images exist
+  const images = [{
+    url: '',
+    props: {
+      source: data.image
+    }
+  }]
+  return (
+  <View style={{ width: "100%", height: 600 }}>
+    {/* <Image
       source={data.image}
       resizeMode="cover"
       style={{ width: "100%", height: "100%" }}
+    /> */}
+    <ImageViewer
+      imageUrls={images}
+      renderIndicator={() => null}
     />
+    
 {/* go back */}
     <CircleButton
       imgUrl={assets.left}
@@ -21,12 +36,12 @@ const DetailsHeader = ({ data, navigation }) => (
 {/* delete button 
 TODO: resize cross icon */}
     <CircleButton
-      imgUrl={assets.close} 
+      imgUrl={assets.close}
       right={15}
       top={StatusBar.currentHeight + 10}
     />
   </View>
-);
+)};
 
 const Details = ({ route, navigation }) => {
   const { data } = route.params;
