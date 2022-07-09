@@ -1,11 +1,39 @@
-import React, { useState } from "react";
-import { View, SafeAreaView, FlatList } from "react-native";
+import React, { useState, useEffect } from "react";
+import { View, SafeAreaView, FlatList, Button } from "react-native";
 
 import { Card, HomeHeader, FocusedStatusBar } from "../components";
 import { COLORS, NFTData } from "../constants";
+import { supabase } from "../lib/supabase";
+
+
+// const getData = async () => {
+//   try {
+//       const user = supabase.auth.user()
+//       const { data, error } = await supabase
+//           .from('details')
+//           .select()
+//           .match({ user_id: user.id })
+//       if (error) {
+//           throw error
+//       }
+//       return data
+//   } catch (error) {
+//       alert(error.message)
+//   }
+// }
 
 const Home = () => {
+  // const test = await getData()
+  // console.log(test)
   const [nftData, setNftData] = useState(NFTData);
+  const [state, setState] = useState({});
+
+  useEffect(() => {
+    return () => {
+      setState({});
+    };
+  }, []);
+
 
   const handleSearch = (value) => {
     if (value.length === 0) {
@@ -51,6 +79,9 @@ const Home = () => {
             style={{ height: 300, backgroundColor: COLORS.primary }} />
           <View style={{ flex: 1, backgroundColor: COLORS.white }} />
         </View>
+      </View>
+      <View>
+        <Button title="Sign Out" onPress={() => supabase.auth.signOut()} />
       </View>
     </SafeAreaView>
   );

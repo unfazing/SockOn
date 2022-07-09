@@ -37,6 +37,30 @@ export default function Login() {
     setLoading(false);
   }
 
+  const signUp = async () => {
+    const { error } = await supabase.auth.signUp({
+      email: email,
+      password: password,
+    });
+
+    if (error) Alert.alert(error.message);
+
+    try {
+      const user = supabase.auth.user();
+      const updates = {
+        id: user.id,
+        updated_at: new Date(),
+      };
+
+      let { error } = await supabase.from("profiles").upsert(updates);
+      if (error) {
+        throw error;
+      }
+    } catch (error) {
+      alert(error.message);
+    }
+  };
+
   return (
     <View>
       <View style={[styles.verticallySpaced, styles.mt20]}>
@@ -71,7 +95,7 @@ export default function Login() {
         <Button
           title="Sign up"
           disabled={loading}
-          onPress={() => signUpWithEmail()}
+          onPress={() => signUp()}
         />
       </View>
     </View>
