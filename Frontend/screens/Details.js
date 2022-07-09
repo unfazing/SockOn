@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react";
 import { View, Text, SafeAreaView, Image, StatusBar, FlatList } from "react-native";
+import { format, parse } from "date-fns";
 
 import { COLORS, SIZES, assets, SHADOWS, FONTS } from "../constants";
 import { CircleButton, FocusedStatusBar } from "../components";
@@ -38,6 +39,7 @@ TODO: resize cross icon */}
 
 const DetailsInfo = ({ data }) => {
   const time=data.time
+  const date=parse(time, "yyyy-MM-dd'T'HH:mm:ss", new Date())
   return (
   <View style={{ width: "100%", height: 40, marginTop:10}}>
       <View
@@ -50,7 +52,7 @@ const DetailsInfo = ({ data }) => {
         <Text
           style={{
             fontFamily: FONTS.semiBold,
-            fontSize: SIZES.small,
+            fontSize: SIZES.medium,
             color: COLORS.primary,
           }}
         >
@@ -59,12 +61,12 @@ const DetailsInfo = ({ data }) => {
         <Text
           style={{
             fontFamily: FONTS.regular,
-            fontSize: SIZES.small - 2,
+            fontSize: SIZES.small,
             color: COLORS.secondary,
             marginTop: 3,
           }}
         >
-          {time}
+          {format(date, "dd-MM-yyyy'  'HH:mm ")}
         </Text>
       </View>
     </View>
