@@ -10,7 +10,7 @@ import { supabase } from '../lib/supabase';
 import * as ImagePicker from 'expo-image-picker';
 import { decode } from 'base64-arraybuffer'
 
-const Avatar = ({ url }) => {
+const Avatar = ({ url, name }) => {
     const [hasUrl, setUrl] = url ? useState(true) : useState(false);
     const [hasGalleryPermission, setGalleryPermission] = useState(false);
     const [image, setImage] = useState(null);
@@ -74,15 +74,16 @@ const Avatar = ({ url }) => {
                 .update({ avatar_url: filePath })
                 .match({ id: user.id })
 
-            const { signedURL, error3 } = supabase
+            const { publicURL, error3 } = supabase
                 .storage
                 .from('avatars')
                 .getPublicUrl(filePath)
 
             const { error2 } = await supabase
                 .from('details')
-                .update({ image_url: signedURL })
+                .update({ image_url: publicURL })
                 .match({ user_id: user.id })
+                .match({ name: name})
 
             if (uploadError) {
                 throw uploadError
@@ -131,7 +132,7 @@ const Avatar = ({ url }) => {
 
     return (
         <View style={styles.container}>
-            {hasUrl ? (
+            {/* {hasUrl ? (
                 <Image
                     style={styles.image}
                     source={image}
@@ -141,7 +142,7 @@ const Avatar = ({ url }) => {
                     style={styles.image}
                     source={{ uri: image }}
                 />
-            )}
+            )} */}
             <TouchableOpacity
                 style={styles.Button}
                 onPress={() => pickImage()}>

@@ -149,6 +149,7 @@ const Details = ({ route, navigation }) => {
       <DetailsHeader data={data} navigation={navigation} />
       <DetailsInfo data={data} />
       <Avatar
+        name={data.name}
         url={avatar_url}
         size={150}
         onUpload={(url) => {
